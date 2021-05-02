@@ -1,4 +1,7 @@
- #define BUFFERSIZE (1024) 
+#include <stdio.h>
+#include <stdlib.h>
+
+#define BUFFERSIZE (1024) 
  
 // BAD: using gets 
 void echo_bad() { 
