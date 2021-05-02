@@ -1,19 +1,11 @@
-#define BUFFERSIZE (1024) 
- 
-// BAD: using gets 
-void echo_bad() { 
-    char buffer[BUFFERSIZE]; 
-    gets(buffer); 
-    printf("Input was: '%s'\n", buffer); 
-} 
- 
-// GOOD: using fgets 
-void echo_good() { 
-    char buffer[BUFFERSIZE]; 
-    fgets(buffer, BUFFERSIZE, stdin); 
-    printf("Input was: '%s'\n", buffer); 
-} 
- 
-int main(void) { 
-    return 0; 
-} 
+#include <stdio.h>
+
+int main(int argc, char** argv) {
+  char *userName = argv[2];
+  
+  // BAD
+  char query1[1000] = {0};
+  sprintf(query1, "SELECT UID FROM USERS where name = \"%s\"", userName);
+	
+  return 0;
+}
