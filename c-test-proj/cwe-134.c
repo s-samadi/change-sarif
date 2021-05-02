@@ -1,19 +1,16 @@
- #define BUFFERSIZE (1024) 
- 
-// BAD: using gets 
-void echo_bad() { 
-    char buffer[BUFFERSIZE]; 
-    gets(buffer); 
-    printf("Input was: '%s'\n", buffer); 
-} 
- 
-// GOOD: using fgets 
-void echo_good() { 
-    char buffer[BUFFERSIZE]; 
-    fgets(buffer, BUFFERSIZE, stdin); 
-    printf("Input was: '%s'\n", buffer); 
-} 
- 
-int main(void) { 
-    return 0; 
-} 
+#include <stdio.h>
+
+void printWrapper(char *str) {
+	printf(str);
+}
+
+int main(int argc, char **argv) {
+	// This should be avoided
+	printf(argv[1]);
+
+	// This should be avoided too, because it has the same effect
+	printWrapper(argv[1]);
+
+	// This is fine
+	printf("%s", argv[1]);
+}
