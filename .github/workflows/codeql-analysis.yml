@@ -31,7 +31,8 @@ jobs:
      
     - name: Build
       run: |
-        c-test-proj/Makefile
+        cd c-test-proj
+        Makefile
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
