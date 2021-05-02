@@ -1,7 +1,7 @@
 all:	union bufferOverflow cwe120 unsafe globalvars cwe190 cwe134
 
 union:
-	gcc -o union.o union.c 
+	gcc -o union.o c-test-proj/union.c 
 bufferOverflow:
 	gcc -o bufferOverflow.o bufferOverflow.c
 cwe120:
