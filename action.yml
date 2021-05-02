@@ -1,0 +1,21 @@
+name: 'Change SARIF'
+description: 'Set severity of SARIF results to error'
+inputs:
+  ruleid:
+    description: 'The rules to change (pipe delimeter seperated)'
+    required: false
+  inputpath:
+    description: 'The path to the input SARIF file'
+    required: true
+  outputpath:
+     description: 'The path to the output SARIF file'
+     required: false
+runs:
+  using: "composite"
+  steps:
+    - name: filter
+      run: |
+          unset LD_PRELOAD
+          echo "${{ github.action_path }}"
+          python3 "${{ github.action_path }}/change-sarif.py" --ruleid "${{ inputs.ruleid }}" --inputpath "${{ inputs.inputpath }}" --outputpath "${{ inputs.outputpath }}" 
+      shell: bash
