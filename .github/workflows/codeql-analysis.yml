@@ -54,7 +54,7 @@ jobs:
     - name: Upload SARIF
       uses: github/codeql-action/upload-sarif@v1
       with:
-        sarif_file: results/cpp-builtin.sarif
+        sarif_file: sarif-results/cpp-builtin.sarif
 
     - name: Upload loc as a Build Artifact
       uses: actions/upload-artifact@v2.2.0
