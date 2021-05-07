@@ -1,3 +1,5 @@
+#This workflow is an example for code scanning c-test-proj
+
 name: "CodeQL"
 
 on:
