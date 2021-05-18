@@ -47,15 +47,15 @@ def changesarif(args):
                 id = rule.get('id')
                 if args.ruleid == None:
                     print('Updating ' + id + ' to ' + severity)
-                    rule['properties']['problem.severity'] = severity
-                    rule['defaultConfiguration']['level'] = severity
+                    rule['properties']['problem.severity'] = "test"
+                    rule['defaultConfiguration']['level'] = "test"
                 else:
                     ruleids = args.ruleid.split('|')
                     for ruleid in ruleids:
                         if(ruleid == id):
                             print('Updating ' + ruleid + ' to ' + severity)
-                            rule['properties']['problem.severity'] = severity
-                            rule['defaultConfiguration']['level'] = severity
+                            rule['properties']['problem.severity'] = "test"
+                            rule['defaultConfiguration']['level'] = "test'
 
     f.close
 
