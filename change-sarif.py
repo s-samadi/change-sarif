@@ -27,7 +27,7 @@ def main():
 
 def changesarif(args):
 
-    severity = 'error'
+    severity = 'test'
 
     # Debug information
     print('The severity to be updated to: ' + severity)
