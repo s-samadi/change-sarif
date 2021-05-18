@@ -3,7 +3,9 @@ This action takes a SARIF file and one or more Rule Id's (pipe seperated) and up
 The parameters it expects are: 
 - inputpath: The path of the input SARIF file to be updated 
 - outputpath: The path of the output SARIF file to be written to 
-- ruleid: The Id of the Rule(s) to be updated, pipe seperated (e.g. rule1 | rule2 )  
+- ruleid: The RuleId(s) to be updated, pipe seperated (e.g. rule1 | rule2 )  
+
+Note that if no rules are passed in then everything will be updated to error 
 
 # Example
 ```yaml 
