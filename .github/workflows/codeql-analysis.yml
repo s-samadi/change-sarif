@@ -33,9 +33,8 @@ jobs:
      
     - name: Build
       run: |
-       c-test-proj/Makefile
-        
-
+       c-test-proj/Makefile | cpp/tainted-format-string-through-global
+       
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
       with:
