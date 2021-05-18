@@ -27,7 +27,7 @@ def main():
 
 def changesarif(args):
 
-    severity = 'Error'
+    severity = 'error'
 
     # Debug information
     print('The severity to be updated to: ' + severity)
@@ -50,7 +50,7 @@ def changesarif(args):
                     rule['properties']['problem.severity'] = severity
                     rule['defaultConfiguration']['level'] = severity
                 else:
-                    ruleids = args.ruleid.split('|')
+                    ruleids = [x.strip() for x in args.ruleid.split('|')]
                     for ruleid in ruleids:
                         if(ruleid == id):
                             print('Updating ' + ruleid + ' to ' + severity)
