@@ -33,7 +33,7 @@ jobs:
      
     - name: Build
       run: |
-       c-test-proj/Makefile | cpp/tainted-format-string-through-global
+       c-test-proj/Makefile 
        
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
@@ -47,7 +47,7 @@ jobs:
     - name: change-sarif
       uses: s-samadi/change-sarif@main
       with:
-        ruleid: cpp/tainted-format-string
+        ruleid: cpp/tainted-format-string | cpp/tainted-format-string-through-global
         inputpath: sarif-results/cpp-builtin.sarif
         outputpath: sarif-results/cpp-builtin.sarif
       
